@@ -1,0 +1,22 @@
+package com.kishan.ecom_demo.Models;
+
+import com.kishan.ecom_demo.DTOs.ProductResponseDTO;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.Cascade;
+
+@Getter
+@Setter
+@Entity
+public class Product extends BaseModel{
+    private String tittle;
+    private double price;
+    private String description;
+    private String image;
+    @ManyToOne(cascade = {CascadeType.PERSIST})
+    private Category category;
+}
