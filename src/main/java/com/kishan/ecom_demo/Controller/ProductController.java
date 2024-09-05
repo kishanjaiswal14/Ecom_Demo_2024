@@ -25,6 +25,6 @@ public class ProductController {
                                     throws NotFoundException {
         Product product = productService.getSingleProduct(id);
         //return product.convertToDTO();
-        return new ResponseEntity<>(product.convertToDTO(), HttpStatus.OK);
+        return new ResponseEntity<>(product.convertToDto(), HttpStatus.OK);
     }
 }

@@ -19,4 +19,14 @@ public class Product extends BaseModel{
     private String image;
     @ManyToOne(cascade = {CascadeType.PERSIST})
     private Category category;
+
+    public ProductResponseDTO convertToDto(){
+        ProductResponseDTO productResponseDTO = new ProductResponseDTO();
+        productResponseDTO.setId(super.getId());
+        productResponseDTO.setTittle(tittle);
+        productResponseDTO.setPrice(price);
+        productResponseDTO.setDescription(description);
+        productResponseDTO.setDescription(image);
+        return productResponseDTO;
+    }
 }

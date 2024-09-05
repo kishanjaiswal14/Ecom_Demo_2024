@@ -11,6 +11,4 @@ public class ApplicationConfiguration {
     public RestTemplate CreateRestTemplate(){
         return new RestTemplate();
     }
-
-    public ModelMapper
 }
